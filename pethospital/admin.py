@@ -1,8 +1,8 @@
 # Django
 from django.contrib import admin
 
-from .models import Colaborator
-class ColaboratorAdmin (admin.ModelAdmin):
+from .models import StaffUser
+class StaffUserAdmin (admin.ModelAdmin):
     # Muestra los campos que se deben mostrar en la página del modelo
     list_display = ('pk','user', 'hour_cost','created_at', 'modified_at')
     # Muestra los campos que tendran un enlace a la página de la entidad
@@ -37,4 +37,4 @@ class ColaboratorAdmin (admin.ModelAdmin):
 
     readonly_fields = ('created_at', 'modified_at')
 
-admin.site.register(Colaborator, ColaboratorAdmin)
+admin.site.register(StaffUser, StaffUserAdmin)

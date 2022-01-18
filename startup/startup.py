@@ -20,7 +20,7 @@ except:
 # DB feed
 print("3. Feeding DB of the app with default data...")
 try:
-    print("3.1. Saving colaborator roles in BD...")
-    os.system('python manage.py loaddata ./startup/DBfoods/colaborator_roles.json')
+    print("3.1. Saving staff roles in BD...")
+    os.system('python manage.py loaddata ./startup/DBfoods/staff_roles.json')
 except:
-    print("3.1. ERROR: Save colaborator days it is not possible")
+    print("3.1. ERROR: Save staff roles it is not possible")

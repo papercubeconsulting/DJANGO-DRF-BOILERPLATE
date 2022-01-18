@@ -1,0 +1,12 @@
+[
+  {
+    "model": "pethospital.StaffRole",
+    "pk": 1,
+    "fields": {
+      "name": "Doctor",
+      "code": "MCO01",
+      "role_group": "MCO",
+      "base_hour_cost": 15
+    }
+  }
+]
