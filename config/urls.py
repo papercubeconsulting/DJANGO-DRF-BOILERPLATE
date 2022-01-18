@@ -14,8 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+
+#* cambio de titulos del sitio de administración
+admin.site.site_header = "Administración Pethospital"
+admin.site.site_title = "Portal de Administración - Pethospital"
+admin.site.index_title = "Bienvenido al Portal de Administración - Pethospital"
 
 urlpatterns = [
+    #* [GROUP] BASIC DJANGO
     path('admin/', admin.site.urls),
+    #* [GROUP] API
+    # Se agregan enpoints de rest-auth (https://django-rest-auth.readthedocs.io/en/latest/installation.html)
+    path('api/v1/auth/', include('rest_auth.urls')),
 ]

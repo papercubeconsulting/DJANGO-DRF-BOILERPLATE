@@ -2,7 +2,6 @@
 Django settings for pethospital project.
 """
 import environ
-import os
 
 # import base settings
 from .base import *

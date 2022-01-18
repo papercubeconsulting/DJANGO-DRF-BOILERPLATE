@@ -1,8 +1,8 @@
 # Django
 from django.contrib import admin
 
-from .models import StaffUser
-class StaffUserAdmin (admin.ModelAdmin):
+from .models import Staff
+class StaffAdmin (admin.ModelAdmin):
     # Muestra los campos que se deben mostrar en la página del modelo
     list_display = ('pk','user', 'hour_cost','created_at', 'modified_at')
     # Muestra los campos que tendran un enlace a la página de la entidad
@@ -12,8 +12,8 @@ class StaffUserAdmin (admin.ModelAdmin):
 
     # Muestra la lista de campos con los que se puede buscar una entidad en la página del modelo
     search_fields = ('user__username',
-                     'user__fist_name',
-                     'user__last_name')
+                    'user__fist_name',
+                    'user__last_name')
 
     # Muestra la lista de filtros que se mostrarán en la barra lateral
     list_filter = (
@@ -27,7 +27,7 @@ class StaffUserAdmin (admin.ModelAdmin):
         ('Datos Colaborador:', {
             'fields': (('user', 'hour_cost'),)
         }),
-         ('Roles:', {
+        ('Roles:', {
             'fields': ['roles']
         }),
         ('Metadata:', {
@@ -37,4 +37,4 @@ class StaffUserAdmin (admin.ModelAdmin):
 
     readonly_fields = ('created_at', 'modified_at')
 
-admin.site.register(StaffUser, StaffUserAdmin)
+admin.site.register(Staff, StaffAdmin)

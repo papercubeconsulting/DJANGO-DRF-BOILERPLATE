@@ -3,7 +3,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-## APPs
+## * [SECTION] APPs
 DEFAULT_DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -14,17 +14,17 @@ DEFAULT_DJANGO_APPS = [
 ]
 
 THIRD_PART_APPS = [
-    # * Default rest framework app (https://www.django-rest-framework.org/)
-    'rest_framework',
-    'rest_framework.authtoken',
-    'django_filters',
+    'rest_framework', # Default rest framework app (https://www.django-rest-framework.org/)
+    'rest_framework.authtoken', # Token authentication https://www.django-rest-framework.org/api-guide/authentication/
+    'django_filters', # Django filters rest framework integration (https://django-filter.readthedocs.io/en/stable/guide/rest_framework.html)
+    'rest_auth', # Django rest auth (https://django-rest-auth.readthedocs.io/en/latest/installation.html)
 ]
 
 CUSTOM_APP = ['pethospital']
 
 BASE_INSTALLED_APPS = DEFAULT_DJANGO_APPS + THIRD_PART_APPS + CUSTOM_APP
 
-# MIDDLEWAREs
+## * [SECTION] MIDDLEWAREs
 DEFAULT_DJANGO_MIDDLEWARES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -36,10 +36,10 @@ DEFAULT_DJANGO_MIDDLEWARES = [
 ]
 BASE_MIDDLEWARES = DEFAULT_DJANGO_MIDDLEWARES
 
-#URLs
+## * [SECTION] URLs
 ROOT_URLCONF = 'config.urls'
 
-#TEMPLATEs
+## * [SECTION] TEMPLATEs
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -58,10 +58,38 @@ TEMPLATES = [
     },
 ]
 
-#WSGI Config
+## * [SECTION] REST FRAMEWORK Config
+REST_FRAMEWORK = {
+    # Default authentication classes (https://www.django-rest-framework.org/api-guide/settings/#default_authentication_classes)
+    # Authentication classes (https://www.django-rest-framework.org/api-guide/authentication/#authentication)
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ),
+    # Default permission to use apis (https://www.django-rest-framework.org/api-guide/permissions/#setting-the-permission-policy)
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    # Default filter backend methods (https://www.django-rest-framework.org/api-guide/settings/#default_filter_backends)
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+}
+
+## * [SECTION] REST AUTH Config
+REST_SESSION_LOGIN = False # Disable session login in Login API view (https://django-rest-auth.readthedocs.io/en/latest/configuration.html)
+REST_USE_JWT = True # To use JWT with REST AUTH (https://django-rest-auth.readthedocs.io/en/latest/installation.html#jwt-support-optional)
+OLD_PASSWORD_FIELD_ENABLED = False # Set it to True if you want to have old password verification on password change endpoint (https://django-rest-auth.readthedocs.io/en/latest/configuration.html)
+
+## * [SECTION] JWT AUTH Config
+# For more details review (https://jpadilla.github.io/django-rest-framework-jwt/)
+JWT_AUTH = {
+    'JWT_VERIFY': True,
+    'JWT_VERIFY_EXPIRATION': False,
+    'JWT_AUTH_HEADER_PREFIX': 'Bearer'
+}
+
+## * [SECTION] WSGI Config
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Password validation
+## * [SECTION] Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -79,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
+## * [SECTION] Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = 'es-PE'
