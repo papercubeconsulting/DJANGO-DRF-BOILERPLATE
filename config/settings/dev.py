@@ -1,6 +1,7 @@
 """
-Django settings for pethospital project.
+Django settings for pethospital project. (DEV)
 """
+
 import environ
 
 # import base settings
