@@ -1,3 +1,5 @@
+## COMMANDS:
+
 #### Create an super user:
 - `python manage.py createsuperuser`
 #### Create an app:

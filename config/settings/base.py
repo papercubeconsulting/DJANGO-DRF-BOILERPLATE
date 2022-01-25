@@ -85,8 +85,17 @@ OLD_PASSWORD_FIELD_ENABLED = False # Set it to True if you want to have old pass
 ## * [SECTION] JWT AUTH Config
 # For more details review (https://jpadilla.github.io/django-rest-framework-jwt/)
 JWT_AUTH = {
+    'JWT_ENCODE_HANDLER':
+    'rest_framework_jwt.utils.jwt_encode_handler',
+    'JWT_DECODE_HANDLER':
+    'rest_framework_jwt.utils.jwt_decode_handler',
+    'JWT_PAYLOAD_HANDLER':
+    'rest_framework_jwt.utils.jwt_payload_handler',
+    'JWT_PAYLOAD_GET_USER_ID_HANDLER':
+    'rest_framework_jwt.utils.jwt_get_user_id_from_payload_handler',
+    'JWT_ALLOW_REFRESH': True, #to enable refresh
     'JWT_VERIFY': True,
-    'JWT_VERIFY_EXPIRATION': False,
+    'JWT_VERIFY_EXPIRATION': True, #5 min default
     'JWT_AUTH_HEADER_PREFIX': 'Bearer'
 }
 

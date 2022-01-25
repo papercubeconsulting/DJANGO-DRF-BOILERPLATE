@@ -1,5 +1,5 @@
 
-## 2.1. LOCAL PROJECT SETUP:
+## 2.2. LOCAL PROJECT SETUP:
 
 #### NOTA: Yo ejecuto el proyecto local en OS Windows. Además de ello uso Anaconda para el desarrollo de proyectos en Python disponible en: (https://www.anaconda.com/products/individual)
 

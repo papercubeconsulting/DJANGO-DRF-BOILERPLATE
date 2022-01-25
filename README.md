@@ -29,12 +29,17 @@
 - gunicorn: manage server request
 - psycopg2-binary
 - django-environ: for manage enviroment variables
-. djangorestframework: rest framework
-### 3.1 DEV
+- djangorestframework: rest framework
+- djangorestframework-jwt: for using jwt in DRF
+
+### 3.2 DEV
 - django-extensions: to graph
 - pyparsing: to graph
 - pydoc: to graph
 - graphviz: to graph
+
+### 3.2 DEV
+- gunicorn: manage server request
 
 ## 4. USEFUL COMMANDS:
 [Ver comandos](https://github.com/papercubeconsulting/DJANGO-DRF-BOILERPLATE/blob/main/doc/COMMANDS.md)
