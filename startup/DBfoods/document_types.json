@@ -1,0 +1,29 @@
+[
+  {
+    "model": "pethospital.DocumentType",
+    "pk": 1,
+    "fields": {
+      "description": "Libreta electoral o DNI",
+      "code": "DT-001",
+      "short_description": "DNI"
+    }
+  },
+  {
+    "model": "pethospital.DocumentType",
+    "pk": 2,
+    "fields": {
+      "description": "Carnet de extranjeria",
+      "code": "DT-002",
+      "short_description": "CE"
+    }
+  },
+  {
+    "model": "pethospital.DocumentType",
+    "pk": 3,
+    "fields": {
+      "description": "Registro unico de contribuyentes",
+      "code": "DT-003",
+      "short_description": "RUC"
+    }
+  }
+]

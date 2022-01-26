@@ -24,3 +24,8 @@ try:
     os.system('python manage.py loaddata ./startup/DBfoods/staff_roles.json')
 except:
     print("3.1. ERROR: Save staff roles it is not possible")
+try:
+    print("3.2. Saving document types in BD...")
+    os.system('python manage.py loaddata ./startup/DBfoods/document_types.json')
+except:
+    print("3.2. ERROR: Save document types it is not possible")

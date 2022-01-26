@@ -1,10 +1,12 @@
 # Django
 from django.contrib import admin
 
-from .models import Staff
+# Custom models
+from pethospital.models import Staff
+
 class StaffAdmin (admin.ModelAdmin):
     # Muestra los campos que se deben mostrar en la página del modelo
-    list_display = ('pk','user', 'hour_cost','created_at', 'modified_at')
+    list_display = ('pk','user','hour_cost','created_at','modified_at')
     # Muestra los campos que tendran un enlace a la página de la entidad
     list_display_links = ('pk', 'user')
     # Muestra los campos que se pueden editar en la página del modelo
@@ -25,16 +27,16 @@ class StaffAdmin (admin.ModelAdmin):
     # Muestra la estructura de la página de edición/creación de la entidad
     fieldsets = (
         ('Datos Colaborador:', {
-            'fields': (('user', 'hour_cost'),)
+            'fields': (('user','hour_cost'),)
         }),
         ('Roles:', {
             'fields': ['roles']
         }),
         ('Metadata:', {
-            'fields': (('created_at', 'modified_at'),)
+            'fields': (('created_at','modified_at'),)
         }),
     )
 
-    readonly_fields = ('created_at', 'modified_at')
+    readonly_fields = ('created_at','modified_at')
 
 admin.site.register(Staff, StaffAdmin)

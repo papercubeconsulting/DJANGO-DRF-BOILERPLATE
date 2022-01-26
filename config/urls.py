@@ -27,7 +27,7 @@ urlpatterns = [
     #* [GROUP] BASIC DJANGO
     path('admin/', admin.site.urls),
     #* [GROUP] API
-    # Se agregan enpoints de rest-auth (https://django-rest-auth.readthedocs.io/en/latest/installation.html)
+    # Se agregan endpoints de rest-auth (https://django-rest-auth.readthedocs.io/en/latest/installation.html)
     path('api/v1/auth/', include('rest_auth.urls')),
     path('api/v1/auth/token/refresh/', refresh_jwt_token),
 ]
