@@ -18,6 +18,8 @@ from django.urls import path,include
 
 from rest_framework_jwt.views import refresh_jwt_token
 
+from pethospital.views import private_media_access
+
 #* cambio de titulos del sitio de administración
 admin.site.site_header = "Administración Pethospital"
 admin.site.site_title = "Portal de Administración - Pethospital"
@@ -30,4 +32,5 @@ urlpatterns = [
     # Se agregan endpoints de rest-auth (https://django-rest-auth.readthedocs.io/en/latest/installation.html)
     path('api/v1/auth/', include('rest_auth.urls')),
     path('api/v1/auth/token/refresh/', refresh_jwt_token),
+    path('media/private/<path:path>',private_media_access,name='private_media_access'),
 ]

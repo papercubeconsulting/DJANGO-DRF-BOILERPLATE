@@ -27,7 +27,7 @@ class StaffAdmin (admin.ModelAdmin):
     # Muestra la estructura de la página de edición/creación de la entidad
     fieldsets = (
         ('Datos Colaborador:', {
-            'fields': (('user','hour_cost'),)
+            'fields': (('user','hour_cost','profile_image'),)
         }),
         ('Roles:', {
             'fields': ['roles']

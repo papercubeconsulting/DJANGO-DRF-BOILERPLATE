@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 ## models package
 from django.db import models
 
+## utils import
+from pethospital.utils import get_profile_photo_path
+
 # The user issue: https://codigofacilito.com/articulos/django-user-model
 
 class StaffRole(models.Model):
@@ -27,6 +30,7 @@ class Staff(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     roles = models.ManyToManyField(StaffRole,related_name="roles")
     hour_cost = models.FloatField("Costo unitario (PEN)",default=0)
+    profile_image = models.ImageField("Imagen de perfil",upload_to=get_profile_photo_path,blank=True)
     #Campos de creación y modificación
     created_at = models.DateTimeField("Fecha de creación",auto_now_add=True)
     modified_at = models.DateTimeField("Fecha de edición",auto_now=True)

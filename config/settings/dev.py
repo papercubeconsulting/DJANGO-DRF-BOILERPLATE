@@ -14,7 +14,7 @@ environ.Env.read_env(BASE_DIR / 'config/settings/.dev.env')
 # SECRET KEY for Django App
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
-# DJANGO EBUG VARIABLE
+# DJANGO DEBUG VARIABLE
 DEBUG = env('DJANGO_DEBUG_VARIABLE')
 
 ALLOWED_HOSTS = [
@@ -50,6 +50,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
 # * Sobre el guardado de archivos en el servidor (https://stackoverflow.com/questions/5517950/django-media-url-and-media-root)
-# * Working with static files (https://docs.djangoproject.com/en/3.1/howto/static-files/)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'data'

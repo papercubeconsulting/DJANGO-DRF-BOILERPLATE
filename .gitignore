@@ -184,3 +184,6 @@ $RECYCLE.BIN/
 # vscode extensions
 .vscode
 .history
+
+# Django files
+data
